@@ -1,0 +1,71 @@
+@import "~src/assets/styles/config";
+
+.app-jumbrotion {
+  background: $dark_color;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    display: grid;
+    grid-template-areas:
+      'image title'
+      'image subtitle'
+      'image description'
+      'image ps'
+      'image actions'
+    ;
+    grid-gap: 16px;
+  }
+
+  &__logo {
+    grid-area: image;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    img {
+      height: 100%;
+      width: 200px;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    color: $orange_color;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    grid-area: subtitle;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__description {
+    grid-area: description;
+    color: #ffffff;
+  }
+
+  &__ps {
+    grid-area: ps;
+    color: #efefef;
+    font-size: 14px;
+    font-style: italic;
+    &:before {
+      content: 'P.S.: '
+    }
+  }
+
+  &__actions {
+    grid-area: actions;
+  }
+
+  &__action:not(:last-child) {
+    margin-right: 16px;
+  }
+}
